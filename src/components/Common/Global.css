@@ -1,13 +1,13 @@
 @font-face {
   font-family: "Lethilya";
-  src: url("../assets/fonts/lethilya-trivalle.otf") format("opentype");
+  src: url("../../assets/fonts/lethilya-trivalle.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "JanuaryLove";
-  src: url("../assets/fonts/january-love-regular.otf") format("opentype");
+  src: url("../../assets/fonts/january-love-regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
