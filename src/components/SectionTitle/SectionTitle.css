@@ -1,0 +1,37 @@
+.section-title-container {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title-container h2 {
+  font-family: "Lethilya", serif;
+  font-weight: normal;
+  text-transform: none;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  margin: 0;
+  font-size: 3.5rem;
+}
+
+.section-title-line {
+  width: 80px;
+  height: 1px;
+  margin: 2.5rem auto 0;
+}
+
+/* Light/Dark variants */
+.section-title-container.light h2 {
+  color: #ffffff;
+}
+
+.section-title-container.dark h2 {
+  color: #1c1917;
+}
+
+.section-title-container.light .section-title-line {
+  background-color: #44403c;
+}
+
+.section-title-container.dark .section-title-line {
+  background-color: #d6d3d1;
+}

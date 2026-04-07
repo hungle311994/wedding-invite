@@ -1,0 +1,13 @@
+.footer-names {
+  font-family: "Lethilya", cursive;
+  font-size: 5.5rem;
+  color: #e7e5e4;
+  margin: 3rem 0;
+  font-weight: normal;
+}
+
+@media (max-width: 768px) {
+  .footer-names {
+    font-size: 3.5rem;
+  }
+}

@@ -1,0 +1,82 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #1c1917;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=2000");
+  background-size: cover;
+  background-position: center;
+  transition: transform 10s ease-out;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.hero:hover .hero-bg {
+  transform: scale(1.1);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
+.save-date-badge {
+  display: inline-block;
+  padding: 0.75rem 2.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  letter-spacing: 0.6em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 3rem;
+}
+
+.hero-date {
+  font-family: "JanuaryLove", serif;
+  font-size: 5rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 4rem;
+  font-weight: normal;
+}
+
+.scroll-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-date {
+    font-size: 3rem;
+  }
+}
