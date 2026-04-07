@@ -3,15 +3,16 @@
   src: url("../../assets/fonts/lethilya-trivalle.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
-}
+} */
 
-/* @font-face {
+@font-face {
   font-family: "JanuaryLove";
   src: url("../../assets/fonts/january-love-regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
-} */
-*/ body {
+}
+
+body {
   margin: 0;
   padding: 0;
   background-color: #fafafa;
