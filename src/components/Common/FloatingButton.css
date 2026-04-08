@@ -1,0 +1,50 @@
+.floating-btn {
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+  color: #1a1a1a;
+  outline: none;
+}
+
+.floating-btn:hover {
+  transform: scale(1.1);
+  background: white;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.floating-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Visibility and Push logic */
+.floating-btn.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.5);
+  margin-top: -45px; /* Pull the next element down when hidden */
+}
+
+.floating-btn.active {
+  border-color: #fb7185;
+}
+
+@media (max-width: 768px) {
+  .floating-btn {
+    width: 40px;
+    height: 40px;
+  }
+  .floating-btn.hidden {
+    margin-top: -40px;
+  }
+}

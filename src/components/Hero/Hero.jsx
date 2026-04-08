@@ -1,18 +1,30 @@
-import { ArrowDown, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Gallery from "../Gallery/Gallery";
+import "./Hero.css";
+
+// Import images
 import img1 from "../../assets/images/img1.jpg";
 import img2 from "../../assets/images/img2.jpg";
 import img3 from "../../assets/images/img3.jpg";
-import "./Hero.css";
 
 const Hero = ({ onScrollToStory }) => {
-  const [fullScreenImg, setFullScreenImg] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const images = [
     { src: img1, num: "03" },
     { src: img2, num: "01" },
     { src: img3, num: "27" },
   ];
+
+  // Scroll lock when gallery is open
+  useEffect(() => {
+    if (activeIndex !== null) {
+      document.body.classList.add("modal-open");
+    } else {
+      document.body.classList.remove("modal-open");
+    }
+    return () => document.body.classList.remove("modal-open");
+  }, [activeIndex]);
 
   return (
     <section className="hero">
@@ -27,13 +39,13 @@ const Hero = ({ onScrollToStory }) => {
           <div className="hero-header__date">03.01.27</div>
         </div>
 
-        {/* Images */}
+        {/* Images Grid */}
         <div className="hero-grid">
           {images.map((img, idx) => (
             <div
               key={idx}
               className="hero-grid__item"
-              onClick={() => setFullScreenImg(img.src)}
+              onClick={() => setActiveIndex(idx)}
             >
               <img src={img.src} alt={`Wedding ${idx + 1}`} />
               <span className="hero-grid__number">{img.num}</span>
@@ -41,20 +53,32 @@ const Hero = ({ onScrollToStory }) => {
           ))}
         </div>
 
-        {/* Scroll to story */}
-        <button onClick={onScrollToStory} className="scroll-btn">
-          <ArrowDown className="scroll-btn__icon" size={36} strokeWidth={0.5} />
+        {/* Scroll indicator */}
+        <button className="scroll-btn" onClick={onScrollToStory}>
+          <div className="scroll-btn__icon">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+            </svg>
+          </div>
         </button>
       </div>
 
-      {/* Fullscreen Modal */}
-      {fullScreenImg && (
-        <div className="hero-modal" onClick={() => setFullScreenImg(null)}>
-          <button className="modal-close">
-            <X size={32} color="#1c1917" />
-          </button>
-          <img src={fullScreenImg} alt="Full screen view" />
-        </div>
+      {/* Modern Gallery Component */}
+      {activeIndex !== null && (
+        <Gallery
+          images={images}
+          initialIndex={activeIndex}
+          onClose={() => setActiveIndex(null)}
+        />
       )}
     </section>
   );
