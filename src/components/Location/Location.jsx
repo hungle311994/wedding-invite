@@ -1,62 +1,77 @@
-import { ExternalLink, MapPin } from "lucide-react";
+import { useEffect, useRef } from "react";
 import SectionTitle from "../SectionTitle/SectionTitle";
+import "./Location.css";
 
 const Location = () => {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal");
+        }
+      },
+      { threshold: 0.1 },
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const googleMapsUrl =
     "https://www.google.com/maps/search/?api=1&query=Gala+Center+415+Hoàng+Văn+Thụ+Phường+2+Tân+Sơn+Hòa+Hồ+Chí+Minh";
 
   return (
-    <section id="location" className="section bg-stone">
+    <section
+      id="location"
+      className="section bg-stone location-container"
+      ref={sectionRef}
+    >
       <SectionTitle>Địa điểm</SectionTitle>
-      <div style={{ marginBottom: "4rem" }}>
+
+      {/* Venue name and address */}
+      <div className="location-info">
         <a
           href={googleMapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          style={{
-            textDecoration: "none",
-            color: "#1c1917",
-            fontSize: "2.5rem",
-            fontFamily: "serif",
-            textTransform: "uppercase",
-            letterSpacing: "0.1em",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "0.75rem",
-          }}
+          style={{ textDecoration: "none" }}
         >
-          Gala Center <ExternalLink size={20} color="#d6d3d1" />
+          <h3
+            style={{
+              fontFamily: "DMSerifDisplay",
+              fontSize: "2.5rem",
+              color: "#1c1917",
+              marginBottom: "1rem",
+              fontWeight: "normal",
+            }}
+          >
+            GALA CENTER
+          </h3>
         </a>
         <p
           style={{
-            fontSize: "0.875rem",
-            letterSpacing: "0.2em",
-            color: "#78716c",
-            marginTop: "1.5rem",
-            textTransform: "uppercase",
+            maxWidth: "32rem",
+            margin: "0 auto",
+            fontSize: "1.125rem",
+            fontStyle: "italic",
+            fontWeight: "300",
+            lineHeight: "1.6",
+            color: "#57534e",
           }}
         >
-          <MapPin
-            size={16}
-            style={{ marginRight: "0.5rem", verticalAlign: "middle" }}
-          />{" "}
-          415 Đ. Hoàng Văn Thụ, Phường 2, Tân Sơn Hòa, Hồ Chí Minh
+          415 Đ. Hoàng Văn Thụ, Tân Sơn Hòa, Hồ Chí Minh
         </p>
       </div>
-      <div
-        style={{
-          maxWidth: "1000px",
-          margin: "0 auto",
-          height: "550px",
-          borderRadius: "2rem",
-          overflow: "hidden",
-          boxShadow: "0 25px 50px -12px rgba(0,0,0,0.1)",
-          border: "1px solid #f5f5f4",
-        }}
-      >
+
+      {/* Map */}
+      <div className="location-map">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.215579930438!2d106.66635837583864!3d10.79448355885232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175293679c6563d%3A0xe54e6061327c5950!2sGala%20Center!5e0!3m2!1svi!2s!4v1713430000000!5m2!1svi!2s"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1586407618565!2d106.6598348!3d10.799159099999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175293124dd4ed9%3A0x539680a498dd4d26!2zVHJ1bmcgdMOibSBI4buZaSBuZ2jhu4sgJiBUaeG7h2MgY8aw4bubaSBHYWxh!5e0!3m2!1sen!2s!4v1775631674711!5m2!1sen!2s"
           width="100%"
           height="100%"
           style={{ border: 0 }}

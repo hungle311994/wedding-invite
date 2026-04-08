@@ -3,7 +3,6 @@ import DressCode from "./components/DressCode/DressCode";
 import Footer from "./components/Footer/Footer";
 import Hero from "./components/Hero/Hero";
 import Location from "./components/Location/Location";
-import RSVP from "./components/RSVP/RSVP";
 import Story from "./components/Story/Story";
 import Timeline from "./components/Timeline/Timeline";
 
@@ -22,7 +21,6 @@ const App = () => {
       <Location />
       <DressCode />
       <Timeline />
-      <RSVP />
       <Footer />
     </div>
   );

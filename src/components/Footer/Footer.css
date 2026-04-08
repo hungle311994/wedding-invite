@@ -1,13 +1,13 @@
 .footer-names {
-  /* font-family: "Lethilya", cursive; */
-  font-size: 5.5rem;
-  color: #e7e5e4;
-  margin: 3rem 0;
+  margin: 1rem 0;
+  font-family: "NVNMotherland", serif;
+  font-size: 2.5rem;
   font-weight: normal;
+  color: #e7e5e4;
 }
 
 @media (max-width: 768px) {
   .footer-names {
-    font-size: 3.5rem;
+    font-size: 1.5rem;
   }
 }

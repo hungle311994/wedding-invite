@@ -34,3 +34,21 @@
 .section-title-container.dark .section-title-line {
   background-color: #d6d3d1;
 }
+
+@media (max-width: 768px) {
+  .section-title-container h2 {
+    font-size: 2.5rem;
+  }
+  .section-title-container {
+    margin-bottom: 3rem;
+  }
+  .section-title-line {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title-container h2 {
+    font-size: 2rem;
+  }
+}

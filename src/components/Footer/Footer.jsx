@@ -4,33 +4,39 @@ const Footer = () => {
   return (
     <footer
       style={{
+        width: "100vw",
+        height: "100vh",
         backgroundColor: "#050505",
-        padding: "12rem 1.5rem",
-        textAlign: "center",
         borderTop: "1px solid #1c1917",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        textAlign: "center",
       }}
     >
       <Heart
+        className="heart-icon"
         style={{
           color: "#f43f5e",
           fill: "rgba(244, 63, 94, 0.05)",
           marginBottom: "4rem",
         }}
         size={64}
-        strokeWidth={0.5}
+        strokeWidth={1}
       />
       <h2
         style={{
+          margin: "0",
           fontSize: "6rem",
-          fontFamily: "serif",
+          fontfamily: "DMSerifDisplay",
+          fontWeight: "300",
           textTransform: "uppercase",
           color: "white",
           letterSpacing: "-0.02em",
-          margin: "0",
-          fontWeight: "300",
         }}
       >
-        Cảm ơn bạn!
+        Cảm ơn bạn
       </h2>
       <div
         style={{
@@ -40,27 +46,15 @@ const Footer = () => {
           margin: "4rem auto",
         }}
       />
+
+      <div className="footer-names">Giang & Hưng</div>
       <p
         style={{
-          color: "#a8a29e",
+          marginTop: "1rem",
           fontSize: "1.5rem",
-          fontStyle: "italic",
-          maxWidth: "44rem",
-          margin: "0 auto",
-          lineHeight: "1.6",
-        }}
-      >
-        Sự hiện diện của bạn không chỉ là niềm vinh hạnh, mà còn là mảnh ghép
-        quý giá nhất cho một ngày cưới vẹn tròn và hạnh phúc.
-      </p>
-      <div className="footer-names">Thuỳ Giang & Quang Hưng</div>
-      <p
-        style={{
-          letterSpacing: "1em",
-          color: "#44403c",
-          fontSize: "0.75rem",
           textTransform: "uppercase",
-          marginTop: "2rem",
+          color: "#44403c",
+          letterSpacing: "0.5em",
         }}
       >
         03.01.2026

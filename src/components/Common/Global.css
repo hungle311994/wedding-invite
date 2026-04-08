@@ -1,18 +1,38 @@
-/* @font-face {
-  font-family: "Lethilya";
-  src: url("../../assets/fonts/lethilya-trivalle.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-} */
-
+/* Font main */
 @font-face {
-  font-family: "JanuaryLove";
-  src: url("../../assets/fonts/january-love-regular.otf") format("opentype");
+  font-family: "DMSerifDisplay";
+  src: url("../../assets/fonts/DMSerifDisplay.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-body {
+@font-face {
+  font-family: "Devitos";
+  src: url("../../assets/fonts/Devitos.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Font signature */
+@font-face {
+  font-family: "BrittanySignature";
+  src: url("../../assets/fonts/BrittanySignature.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NVNMotherland";
+  src: url("../../assets/fonts/NVNMotherland.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
   margin: 0;
   padding: 0;
   background-color: #fafafa;
@@ -21,6 +41,7 @@ body {
     sans-serif;
   color: #44403c;
   overflow-x: hidden;
+  width: 100%;
 }
 
 .wedding-invite {
