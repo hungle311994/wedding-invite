@@ -5,6 +5,7 @@ import Hero from "./components/Hero/Hero";
 import Location from "./components/Location/Location";
 import Story from "./components/Story/Story";
 import Timeline from "./components/Timeline/Timeline";
+import BackToTop from "./components/BackToTop/BackToTop";
 
 const App = () => {
   const scrollToSection = (id) => {
@@ -22,6 +23,7 @@ const App = () => {
       <DressCode />
       <Timeline />
       <Footer />
+      <BackToTop />
     </div>
   );
 };
