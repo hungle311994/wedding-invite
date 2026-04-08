@@ -11,7 +11,7 @@ const Hero = ({ onScrollToStory }) => {
   const images = [
     { src: img1, num: "03" },
     { src: img2, num: "01" },
-    { src: img3, num: "26" },
+    { src: img3, num: "27" },
   ];
 
   return (
@@ -24,7 +24,7 @@ const Hero = ({ onScrollToStory }) => {
             <span className="hero-header__script">the</span>
             <span className="hero-header__main">date</span>
           </div>
-          <div className="hero-header__date">03.01.26</div>
+          <div className="hero-header__date">03.01.27</div>
         </div>
 
         {/* Images */}
