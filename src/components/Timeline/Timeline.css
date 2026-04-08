@@ -63,7 +63,7 @@
 }
 
 .timeline-info {
-  width: 42%;
+  width: 48%;
   opacity: 0;
   transition: all 0.8s ease-out;
 }

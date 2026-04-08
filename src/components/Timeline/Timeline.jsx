@@ -14,7 +14,7 @@ const events = [
   {
     time: "18:45",
     label: "Wedding Ceremony",
-    sub: "Làm lễ thành hôn",
+    sub: "Lễ thành hôn",
     icon: <RingsIcon />,
   },
   {
